@@ -161,10 +161,11 @@
     <!-- Hero -->
     <section class="hero">
       <h1 class="enter">Get free market alerts on Telegram</h1>
+      <p class="enter" style="animation-delay:.08s">Zyrox Signals gives you free, real-time market alerts on Telegram, customised to your chosen assets, metrics, and notification frequency.</p>
       <p class="enter" style="animation-delay:.08s">Submit your details below. We’ll review within 24 hours and start sending signals to <b>your Telegram chat</b>. No payments. No accounts.</p>
       <div class="pulse enter" style="animation-delay:.12s">Live • Secure • No token needed</div>
     </section>
-
+    
     <!-- How to find your Chat ID -->
     <section class="card section enter" style="animation-delay:.18s">
       <h3 class="title">How to find your Telegram <em>Chat ID</em></h3>
@@ -184,7 +185,7 @@
         <div>
           <label for="chatId">Your Telegram Chat ID *</label>
           <input id="chatId" class="input" placeholder="e.g. 123456789 or -1001234567890" required />
-          <div class="muted">For channels, add our bot as <b>Admin</b>. Channel IDs usually start with <code class="inline">-100</code>.</div>
+          
         </div>
         <div>
           <label for="assetType">Asset Type *</label>
@@ -203,15 +204,13 @@
           <label for="notes">Notes (optional)</label>
           <input id="notes" class="input" placeholder="Anything else we should know…" />
         </div>
-
         <div>
           <label for="notes">Name</label>
           <input id="notes" class="input" placeholder="Abir Singh" />
         </div>
-
         <div>
-          <label for="notes">Email</label>
-          <input id="notes" class="input" placeholder="andrewsmith@outlook.com />
+          <label for="notes">E-mail</label>
+          <input id="notes" class="input" placeholder="johsmith@outlook.com" />
         </div>
 
         <div style="grid-column:1/-1">
@@ -224,8 +223,8 @@
             <label class="pill"><input type="checkbox" name="metric" value="macd" checked> MACD</label>
             <label class="pill"><input type="checkbox" name="metric" value="adx" checked> ADX</label>
             <label class="pill"><input type="checkbox" name="metric" value="volume" checked> Volume</label>
-            <label class="pill"><input type="checkbox" name="metric" value="gbp" checked> Pounds</label>
-            <label class="pill"><input type="checkbox" name="metric" value="usd" checked> Dollars</label>
+            <label class="pill"><input type="checkbox" name="metric" value="Currency" checked> Pounds</label>
+            <label class="pill"><input type="checkbox" name="metric" value="Currency" checked> Dollars</label>
             <label class="pill"><input type="checkbox" id="advice"/> Include Buy/Sell/Hold advice</label>
           </div>
         </div>
