@@ -161,8 +161,10 @@
     <!-- Hero -->
     <section class="hero">
       <h1 class="enter">Get free market alerts on Telegram</h1>
+      <p class="enter" style="animation-delay:.08s">Zyrox Signals is a free Telegram bot that delivers real-time market alerts and trading insights directly to your chat.</p>
       <p class="enter" style="animation-delay:.08s">Submit your details below. We’ll review within 24 hours and start sending signals to <b>your Telegram chat</b>. No payments. No accounts.</p>
       <div class="pulse enter" style="animation-delay:.12s">Live • Secure • No token needed</div>
+    
     </section>
 
     <!-- How to find your Chat ID -->
@@ -181,11 +183,13 @@
     <!-- Form -->
     <section class="card section enter" style="animation-delay:.26s">
       <form id="zyroxForm" class="grid">
+        
         <div>
           <label for="chatId">Your Telegram Chat ID *</label>
           <input id="chatId" class="input" placeholder="e.g. 123456789 or -1001234567890" required />
-          <div class="muted">For channels, add our bot as <b>Admin</b>. Channel IDs usually start with <code class="inline">-100</code>.</div>
+      
         </div>
+
         <div>
           <label for="assetType">Asset Type *</label>
           <select id="assetType" class="select" required>
@@ -195,6 +199,17 @@
             <option value="forex">Forex</option>
           </select>
         </div>
+
+        <div>
+          <label for="Name">Name</label>
+          <input id="Name" class="input" placeholder="Abir Singh" />
+        </div>
+
+        <div>
+          <label for="E-mail">E-mail</label>
+          <input id="E-mail" class="input" placeholder="johnsmith@outlook.com" />
+        </div>
+
         <div>
           <label for="symbol">Ticker / Symbol *</label>
           <input id="symbol" class="input" placeholder="e.g. AAPL, ^GSPC, BTC-USD, EURUSD=X" required />
@@ -204,6 +219,7 @@
           <input id="notes" class="input" placeholder="Anything else we should know…" />
         </div>
 
+      
         <div style="grid-column:1/-1">
           <div class="title">Metrics to include</div>
           <div class="row">
