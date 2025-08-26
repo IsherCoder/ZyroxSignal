@@ -8,23 +8,18 @@
   <meta name="theme-color" content="#000000" />
   <style>
     :root{
-      /* Dark theme */
       --bg0:#05080f;
       --bg1:#0a111a;
       --card:#0f1724;
       --card-2:#0b1320;
       --text:#e6ebf4;
       --muted:#8a93a5;
-      --brand:#22c55e;   /* neon green */
+      --brand:#22c55e;
       --brand-2:#16a34a;
       --ring: rgba(34,197,94,.35);
       --stroke: #172235;
       --shadow: 0 20px 60px rgba(0,0,0,.55);
-
-      /* Animation timings */
-      --t-fast: .18s;
-      --t-med: .35s;
-      --t-slow: .6s;
+      --t-fast: .18s; --t-med: .35s; --t-slow: .6s;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -38,23 +33,17 @@
       overflow-x:hidden;
     }
     a{color:var(--brand); text-decoration:none}
-
-    /* Floating gradient orbs (decoration) */
     .orb{position:fixed; inset:auto; pointer-events:none; filter: blur(50px); opacity:.35; z-index:0}
     .orb.o1{width:420px; height:420px; left:-140px; top:-120px; background: radial-gradient(circle at 30% 30%, #1bff89 0%, transparent 60%); animation: floatY 12s ease-in-out infinite}
     .orb.o2{width:520px; height:520px; right:-180px; top:160px; background: radial-gradient(circle at 60% 40%, #3fa3ff 0%, transparent 60%); animation: floatX 14s ease-in-out infinite}
     @keyframes floatY{0%{transform:translateY(0)}50%{transform:translateY(30px)}100%{transform:translateY(0)}}
     @keyframes floatX{0%{transform:translateX(0)}50%{transform:translateX(-30px)}100%{transform:translateX(0)}}
-
-    /* Shell */
     .container{max-width:1040px; margin:0 auto; padding:20px; position:relative; z-index:1}
     .nav{display:flex; align-items:center; justify-content:space-between; padding:8px 0}
     .logo{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px}
     .logo img{width:30px; height:30px; border-radius:8px; box-shadow:0 0 0 0 rgba(34,197,94,.0); transition: box-shadow var(--t-med) ease}
     .logo:hover img{box-shadow:0 0 0 8px rgba(34,197,94,.15)}
     .badge{display:inline-flex; align-items:center; gap:8px; background:linear-gradient(90deg, var(--brand), var(--brand-2)); color:#07120b; font-weight:900; padding:8px 12px; border-radius:999px; font-size:12px; letter-spacing:.2px; box-shadow:0 8px 24px rgba(34,197,94,.25)}
-
-    /* Hero */
     .hero{padding:34px 0 18px; text-align:center}
     .hero h1{font-size:42px; line-height:1.05; margin:6px 0 10px; letter-spacing:-.4px}
     .hero p{color:var(--muted); margin:0 auto; max-width:760px}
@@ -64,12 +53,7 @@
       box-shadow: inset 0 0 0 1px rgba(34,197,94,.15);
       animation: pulseGlow 2.2s ease-in-out infinite;
     }
-    @keyframes pulseGlow{
-      0%,100%{ box-shadow:0 0 0 0 rgba(34,197,94,.0), inset 0 0 0 1px rgba(34,197,94,.15)}
-      50%{ box-shadow:0 0 36px 0 rgba(34,197,94,.25), inset 0 0 0 1px rgba(34,197,94,.22)}
-    }
-
-    /* Cards & form */
+    @keyframes pulseGlow{0%,100%{ box-shadow:0 0 0 0 rgba(34,197,94,.0), inset 0 0 0 1px rgba(34,197,94,.15)}50%{ box-shadow:0 0 36px 0 rgba(34,197,94,.25), inset 0 0 0 1px rgba(34,197,94,.22)}}
     .card{
       background: linear-gradient(180deg, rgba(18,26,39,.85), rgba(10,17,26,.85));
       backdrop-filter: blur(8px);
@@ -79,23 +63,18 @@
     }
     .card.show{transform: translateY(0); opacity:1}
     .card:hover{border-color:#1d2f49; box-shadow: 0 24px 80px rgba(3,8,20,.45)}
-
     .section{margin-top:18px}
     .title{font-weight:900; margin:0 0 10px; letter-spacing:.2px}
     .grid{display:grid; grid-template-columns:1fr; gap:14px}
     @media(min-width:860px){.grid{grid-template-columns:1fr 1fr}}
-
     label{display:block; font-size:12.5px; color:var(--muted); margin-bottom:6px; letter-spacing:.2px}
     .input,.select,.textarea{
       width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--stroke);
       background:linear-gradient(180deg, #0c1422, #0a111a); color:var(--text); outline:none;
       transition: border-color var(--t-fast) ease, box-shadow var(--t-fast) ease, transform var(--t-fast) ease;
     }
-    .input:focus,.select:focus,.textarea:focus{
-      border-color:var(--brand); box-shadow:0 0 0 6px var(--ring); transform: translateY(-1px);
-    }
+    .input:focus,.select:focus,.textarea:focus{border-color:var(--brand); box-shadow:0 0 0 6px var(--ring); transform: translateY(-1px)}
     .textarea{min-height:88px}
-
     .row{display:flex; gap:10px; flex-wrap:wrap}
     .pill{
       display:inline-flex; align-items:center; gap:9px; background:linear-gradient(180deg, #0b1421, #0a121d);
@@ -103,7 +82,6 @@
     }
     .pill:hover{transform: translateY(-1px); border-color:#20324c}
     .pill input{accent-color:var(--brand)}
-
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       background:linear-gradient(180deg, var(--brand), var(--brand-2));
@@ -113,43 +91,26 @@
     }
     .btn:hover{filter:brightness(1.05); transform: translateY(-1px); box-shadow:0 18px 48px rgba(34,197,94,.33)}
     .btn:active{transform: translateY(0)}
-    .btn-ghost{
-      background:#0d1624; color:var(--text); border:1px solid var(--stroke);
-    }
-
+    .btn-ghost{background:#0d1624; color:var(--text); border:1px solid var(--stroke)}
     .muted{color:var(--muted); font-size:13px}
     .center{display:flex; justify-content:center}
-
     .alert{
       background:linear-gradient(180deg, #0d1a13, #0a1510);
       border:1px solid #10361f; border-left:6px solid var(--brand);
       padding:14px; border-radius:12px; box-shadow: inset 0 0 0 1px rgba(34,197,94,.08);
     }
-    .success{
-      background: linear-gradient(180deg, #0f1e12, #0c1810);
-      border-left-color:#16a34a;
-    }
-
+    .success{background: linear-gradient(180deg, #0f1e12, #0c1810); border-left-color:#16a34a}
     .footer{color:var(--muted); text-align:center; padding:30px 0; font-size:12px}
-
     .hidden{display:none}
-    code.inline{
-      background:#0a141f; border:1px solid var(--stroke); padding:2px 6px; border-radius:6px; color:#95ffe0
-    }
-
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      .card, .logo img, .btn, .pill, .hero .pulse, .orb{animation: none !important; transition: none !important}
-    }
+    code.inline{background:#0a141f; border:1px solid var(--stroke); padding:2px 6px; border-radius:6px; color:#95ffe0}
+    @media (prefers-reduced-motion: reduce){.card, .logo img, .btn, .pill, .hero .pulse, .orb{animation:none!important; transition:none!important}}
   </style>
 </head>
 <body>
-  <!-- Ambient orbs -->
   <div class="orb o1"></div>
   <div class="orb o2"></div>
 
   <div class="container">
-    <!-- Top bar -->
     <div class="nav">
       <div class="logo">
         <img src="https://i.postimg.cc/Kz82Wdg5/bolt-logo.png" alt="Zyrox logo"/>
@@ -158,16 +119,13 @@
       <span class="badge">Free setup • No login</span>
     </div>
 
-    <!-- Hero -->
     <section class="hero">
       <h1 class="enter">Get free market alerts on Telegram</h1>
       <p class="enter" style="animation-delay:.08s">Zyrox Signals is a free Telegram bot that delivers real-time market alerts and trading insights directly to your chat.</p>
       <p class="enter" style="animation-delay:.08s">Submit your details below. We’ll review within 24 hours and start sending signals to <b>your Telegram chat</b>. No payments. No accounts.</p>
       <div class="pulse enter" style="animation-delay:.12s">Live • Secure • No token needed</div>
-    
     </section>
 
-    <!-- How to find your Chat ID -->
     <section class="card section enter" style="animation-delay:.18s">
       <h3 class="title">How to find your Telegram <em>Chat ID</em></h3>
       <ol class="muted" style="line-height:1.6">
@@ -180,14 +138,11 @@
       </div>
     </section>
 
-    <!-- Form -->
     <section class="card section enter" style="animation-delay:.26s">
       <form id="zyroxForm" class="grid">
-        
         <div>
           <label for="chatId">Your Telegram Chat ID *</label>
           <input id="chatId" class="input" placeholder="e.g. 123456789 or -1001234567890" required />
-      
         </div>
 
         <div>
@@ -214,12 +169,12 @@
           <label for="symbol">Ticker / Symbol *</label>
           <input id="symbol" class="input" placeholder="e.g. AAPL, ^GSPC, BTC-USD, EURUSD=X" required />
         </div>
+
         <div>
           <label for="notes">Notes (optional)</label>
           <input id="notes" class="input" placeholder="Anything else we should know…" />
         </div>
 
-      
         <div style="grid-column:1/-1">
           <div class="title">Metrics to include</div>
           <div class="row">
@@ -257,14 +212,11 @@
         </div>
 
         <div class="center" style="grid-column:1/-1; margin-top:6px">
-          <button class="btn" type="submit">
-            <span id="btnText">Submit for review</span>
-          </button>
+          <button class="btn" type="submit"><span id="btnText">Submit for review</span></button>
         </div>
       </form>
     </section>
 
-    <!-- Success -->
     <section id="status" class="hidden section">
       <div class="card success show">
         <div class="row" style="justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap">
@@ -289,44 +241,30 @@
   </div>
 
   <script>
-    // DOM helpers
     const $ = (q)=>document.querySelector(q);
     const $$ = (q)=>document.querySelectorAll(q);
 
     // Year
     $('#y').textContent = new Date().getFullYear();
 
-    // Staggered entrance for cards & hero
+    // Entrance anims
     function reveal(){
-      // animate .enter
       $$('.enter').forEach((el,i)=>{
-        el.style.opacity = 0;
-        el.style.transform = 'translateY(10px)';
-        setTimeout(()=>{
-          el.style.transition = 'opacity .6s ease, transform .6s ease';
-          el.style.opacity = 1;
-          el.style.transform = 'translateY(0)';
-        }, 80 * i);
+        el.style.opacity = 0; el.style.transform = 'translateY(10px)';
+        setTimeout(()=>{ el.style.transition = 'opacity .6s ease, transform .6s ease'; el.style.opacity = 1; el.style.transform = 'translateY(0)'; }, 80 * i);
       });
-      // animate cards
-      $$('.card').forEach((el,i)=>{
-        setTimeout(()=> el.classList.add('show'), 140 + 90 * i);
-      });
+      $$('.card').forEach((el,i)=> setTimeout(()=> el.classList.add('show'), 140 + 90 * i));
     }
     document.addEventListener('DOMContentLoaded', reveal);
 
-    // Frequency custom toggler
+    // Custom freq toggle
     $$('#freqRow input[name="freq"]').forEach(r=>{
-      r.addEventListener('change',()=>{
-        const isCustom = $('#freqCustom').checked;
-        $('#customWrap').classList.toggle('hidden', !isCustom);
-      });
+      r.addEventListener('change',()=> $('#customWrap').classList.toggle('hidden', !$('#freqCustom').checked));
     });
 
     // CSV helpers
     const CSV_KEY = 'zyrox_csv_v1';
-    const CSV_HEADER = 'id,created_at,chat_id,asset_type,symbol,metrics,include_advice,frequency,notes,name,email,gbp,csv\n';
-
+    const CSV_HEADER = 'id,created_at,chat_id,asset_type,symbol,metrics,include_advice,frequency,notes,name,email,gbp,usd\n';
 
     function getCSV(){
       let csv = localStorage.getItem(CSV_KEY);
@@ -337,13 +275,14 @@
 
     function appendCSV(rowObj){
       const safe = (v)=> (`"${String(v??'').replaceAll('"','""')}"`);
+      const metricsJoined = Array.isArray(rowObj.metrics) ? rowObj.metrics.join(';') : (rowObj.metrics || '');
       const line = [
         rowObj.id,
         rowObj.created_at,
         rowObj.chat_id,
         rowObj.asset_type,
         rowObj.symbol,
-        rowObj.metrics.join(';'),
+        metricsJoined,
         rowObj.include_advice,
         rowObj.frequency,
         rowObj.notes,
@@ -362,29 +301,19 @@
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url; a.download = filename; a.click();
-      // Provide / refresh fallback link
       const dl = $('#dlLink'); if (dl){ dl.href = url; }
-      // Keep URL valid a bit so fallback works; revoke later
       setTimeout(()=>URL.revokeObjectURL(url), 30000);
     }
 
-    // Subtle button progress animation
     function setBusy(b){
       const btn = $('#zyroxForm button[type="submit"]');
       const txt = $('#btnText');
-      if (b){
-        btn.style.opacity = .85;
-        btn.style.pointerEvents = 'none';
-        txt.textContent = 'Submitting…';
-      } else {
-        btn.style.opacity = 1;
-        btn.style.pointerEvents = '';
-        txt.textContent = 'Submit for review';
-      }
+      if (b){ btn.style.opacity = .85; btn.style.pointerEvents = 'none'; txt.textContent = 'Submitting…'; }
+      else { btn.style.opacity = 1; btn.style.pointerEvents = ''; txt.textContent = 'Submit for review'; }
     }
 
-    // Handle submit
-    $('#zyroxForm').addEventListener('submit', (e)=>{
+    // Submit handler
+    $('#zyroxForm').addEventListener('submit', async (e)=>{
       e.preventDefault();
       const chatId = $('#chatId').value.trim();
       const assetType = $('#assetType').value;
@@ -415,11 +344,34 @@
         metrics,
         include_advice: advice,
         frequency: freq,
-        notes
+        notes,
+        name: $('#Name').value.trim(),
+        email: $('#E-mail').value.trim(),
+        gbp: metrics.includes('gbp'),
+        usd: metrics.includes('usd')
       };
 
       setBusy(true);
-      // Append to CSV and auto-download
+
+      // Send to Google Sheets
+try {
+  const res = await fetch("https://script.google.com/macros/s/AKfycbzH9ax-Phlob5uI0G1kOXx19oNLPwLJ5JNlEQalK2kkTKMW7hS1dfEIymWFeOMJCbw1eQ/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
+  const txt = await res.text();
+  console.log("Saved to Google Sheet:", res.status, txt);
+  if (!res.ok) alert('Google Sheets save failed: ' + res.status + ' ' + txt);
+
+} catch(err) {
+  console.error("Google Sheets save error:", err);
+  alert('Could not reach Google Sheets. Check your Web App deployment/URL.');
+}
+
+
+      // Also create CSV for the user
       const csv = appendCSV(payload);
       downloadCSV(csv);
 
@@ -429,31 +381,19 @@
       e.target.reset();
       $('#customWrap').classList.add('hidden');
 
-      // Send to Google Sheets
-fetch("https://script.google.com/macros/s/AKfycbyA26bQ2kbQ0PlD9tkxTdsIFv95rY4fj9sex2rE7DgGaB58HMTL8Z_wbehpydaa9_5ORA/exec", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(payload)
-})
-.then(res => res.text())
-.then(txt => console.log("Saved to Google Sheet:", txt))
-.catch(err => console.error("Google Sheets save failed:", err));
-
-      // smooth scroll
+      // Smooth scroll
       window.scrollTo({ top: $('#status').offsetTop - 12, behavior: 'smooth' });
       setTimeout(()=>setBusy(false), 500);
     });
   </script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JB5WP1KMHY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JB5WP1KMHY');
-</script>
-
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JB5WP1KMHY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JB5WP1KMHY');
+  </script>
 </body>
 </html>
